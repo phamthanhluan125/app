@@ -30,7 +30,7 @@ end
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  # Returns true if the given token matches the digest.
+  # # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil?
@@ -42,7 +42,7 @@ end
     update_attribute(:remember_digest, nil)
   end
 
-  # Activates an account.
+   # Activates an account.
   def activate
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
